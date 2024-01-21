@@ -1,5 +1,6 @@
 :root {
   --pale: #fff2df;
+  --dpale: #f0dcc5;
   --brown: #4b2c20;
   --mocha: #995b2c;
 }
@@ -149,12 +150,12 @@ body {
 
 .hero .content {
   padding: 1rem 7%;
-  max-width: 60rem;
+  max-width: 70rem;
 }
 
 .hero .content h1 {
   font-family: 'Source Serif 4', sans-serif;
-  font-size: 3.9em;
+  font-size: 4em;
   text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -208,7 +209,10 @@ body {
 }
 
 .about h2 span {
-  color: var(--mocha);
+  background-image: linear-gradient(to right, #995b2c, var(--brown));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .about .row {
@@ -276,13 +280,12 @@ body {
 }
 
 /* Menu */
-.menu,
-.product {
+.menu {
   padding: 7rem 7% 1.4rem;
 }
 
 .menu h2,
-.product h2 {
+.snack h2 {
   font-family: 'Source Serif 4', sans-serif;
   font-size: 3rem;
   text-align: center;
@@ -294,7 +297,7 @@ body {
 }
 
 .menu p,
-.product p {
+.snack p {
   text-align: center;
   max-width: 30rem;
   margin: auto;
@@ -303,17 +306,20 @@ body {
   line-height: 1;
 }
 
-.menu .row {
+.menu .row,
+.snack .row {
   display: flex;
   flex-wrap: wrap;
   margin-top: 5rem;
   justify-content: center;
 }
 
-.menu .row .menu-card {
+.menu .row .menu-card,
+.snack .row .snack-card {
   text-align: center;
   max-width: 25%;
   padding-bottom: 2rem;
+  gap: 2px;
 }
 
 .menu .row .menu-card img {
@@ -325,8 +331,25 @@ body {
   margin: 1rem auto 0.5rem;
 }
 
-.product h2 {
+.snack {
+  padding: 0.8rem 7% 1.4rem;
+}
+
+.snack h2 {
   font-size: 2.25rem;
+  color: #000;
+}
+
+.snack h2 span {
+  background-image: linear-gradient(to right, #4b2c20, #995b2c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.snack .row .snack-card img {
+  border-radius: 5%;
+  width: 60%;
 }
 
 /* Contact */
@@ -339,7 +362,7 @@ body {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 1rem;
-  background-image: linear-gradient(to right, #4b2c20, #995b2c);
+  background-image: linear-gradient(to right, #995b2c, var(--brown));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -357,7 +380,7 @@ body {
 .contact .row {
   display: flex;
   margin-top: 2rem;
-  background-color: #ebdecc;
+  background-color: var(--dpale);
   flex-wrap: wrap;
 }
 
@@ -399,6 +422,11 @@ body {
   color: #fff;
   background-color: var(--brown);
   cursor: pointer;
+}
+
+.contact .row form .btn:hover {
+  background-color: var(--mocha);
+  scale: 95%;
 }
 
 /* Footer */
@@ -515,7 +543,11 @@ footer .credit span {
   .menu h3 {
     font-size: 2rem;
   }
-  .menu p {
+  .snack h3 {
+    font-size: 1.5rem;
+  }
+  .menu p,
+  .snack p {
     font-size: 1.6rem;
   }
   .menu .row .menu-card {
